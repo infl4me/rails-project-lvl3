@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title
+      = t('app_name')
+    meta[name="viewport" content="width=device-width,initial-scale=1"]
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  body.d-flex.flex-column.h-100
+    = render 'layouts/shared/header'
+    main.container.my-4
+      - flash.each do |type, msg|
+        div class="alert alert-#{type == 'alert' ? 'danger' : 'info'}"
+          - if msg.is_a?(Array)
+            - msg.each do |cur_msg|
+              div = cur_msg
+          - else
+            = msg
+      = yield
