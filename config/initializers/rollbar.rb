@@ -4,7 +4,7 @@ Rollbar.configure do |config|
   # Without configuration, Rollbar is enabled in all environments.
   # To disable in specific environments, set config.enabled=false.
 
-  config.access_token = '9770528a66dd4b0b9d2cf4393dc0c767'
+  config.access_token = ENV.fetch('ROLLBAR_TOKEN')
 
   # Here we'll disable in 'test':
   if Rails.env.test?
