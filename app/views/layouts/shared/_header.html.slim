@@ -3,12 +3,9 @@ header.container.mb-2
     .navbar.navbar-expand-md.navbar-light.me-auto
       = link_to t('app_name'), root_path, class: 'navbar-brand me-md-4'
     ul.nav.nav-pills
-      / TODO: - if user_signed_in?
-      - if true
+      - if signed_in?
         li.nav-item
-          = link_to t('auth.signout'), destroy_user_session_path, method: :delete, class: 'nav-link link-dark'
+          = link_to t('auth.signout'), auth_destroy_path, method: :delete, class: 'nav-link link-dark'
       - else
         li.nav-item.me-2
-          = link_to t('auth.signin'), new_user_session_path, class: 'nav-link link-dark'
-        li.nav-item
-          = link_to t('auth.signup'), new_user_registration_path, class: 'nav-link link-dark'
+          = link_to t('auth.signin'), auth_request_path('github'), method: :post, class: 'nav-link link-dark'
