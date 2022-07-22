@@ -10,6 +10,7 @@ import "channels";
 require("jquery");
 require("@popperjs/core");
 require("bootstrap");
+require("bootstrap/scss/bootstrap");
 
 Rails.start();
 Turbolinks.start();
