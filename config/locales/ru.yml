@@ -1,2 +1,5 @@
 ru:
   app_name: "Доска объявлений"
+  auth:
+    signin: Войти
+    signout: Выйти

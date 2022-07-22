@@ -1,2 +1,5 @@
 en:
   app_name: "Bullet Board"
+  auth:
+    signin: Sign In
+    signout: Sign Out
