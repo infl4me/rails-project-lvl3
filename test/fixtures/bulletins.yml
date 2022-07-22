@@ -1,7 +1,4 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 bulletin_one:
-  id: 1
   title: bulletin 1
   description: blablabla
   category: category_two
