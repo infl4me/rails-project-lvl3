@@ -1,0 +1,16 @@
+= simple_form_for(@bulletin) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.input :title
+    = f.input :description
+    = f.association :category
+    = f.association :user
+    - if @bulletin.image_attachment
+      = image_tag @bulletin.image, class: 'img-thumbnail mb-2'
+    = f.input :image
+
+
+  .form-actions
+    = f.button :submit

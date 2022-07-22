@@ -1,0 +1,6 @@
+sample_image:
+  name: image
+  record_type: Bulletin
+  record_id: 1
+  blob_id: 1
+

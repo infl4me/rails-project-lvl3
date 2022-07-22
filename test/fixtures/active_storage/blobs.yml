@@ -1,0 +1,9 @@
+bulletin_one_image_blob:
+  id: 1
+  key: wau365k0nopyls769fq5m6lrs5z5
+  filename: image.jpg
+  content_type: image/jpeg
+  metadata: '{"identified": true}'
+  service_name: local
+  byte_size: 8296
+  checksum: 9y9mycOMjCpTv+cBz9fpdg==

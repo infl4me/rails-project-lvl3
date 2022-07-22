@@ -2,6 +2,24 @@
 
 if Rails.env.development?
   %w[development business ruby js job].each do |category|
-    Category.create(name: category)
+    Category.find_or_create_by(name: category)
+  end
+
+  user = User.find_or_create_by(
+    email: 'asd@asd.com',
+    name: 'asd'
+  )
+
+  5.times do
+    bulletin = user.bulletins.find_or_initialize_by(
+      title: Faker::Lorem.word,
+      description: Faker::Lorem.paragraph(sentence_count: 2),
+      category: Category.all.sample
+    )
+
+    unless bulletin.persisted?
+      bulletin.image.attach(io: File.open(Rails.root.join('test/fixtures/files/image.jpg')), filename: 'image.jpg')
+      bulletin.save
+    end
   end
 end

@@ -1,0 +1,29 @@
+h1 Listing bulletins
+
+table
+  thead
+    tr
+      th Title
+      th Description
+      th Image
+      th Category
+      th User
+      th
+      th
+      th
+
+  tbody
+    - @bulletins.each do |bulletin|
+      tr
+        td = bulletin.title
+        td = bulletin.description
+        td = image_tag bulletin.image
+        td = bulletin.category.name
+        td = bulletin.user.formatted_name
+        td = link_to 'Show', bulletin
+        td = link_to 'Edit', edit_bulletin_path(bulletin)
+        td = link_to 'Destroy', bulletin, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Bulletin', new_bulletin_path
