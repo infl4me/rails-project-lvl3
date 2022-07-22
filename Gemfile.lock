@@ -97,9 +97,6 @@ GEM
     hashie (5.0.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
-    jbuilder (2.11.5)
-      actionview (>= 5.0.0)
-      activesupport (>= 5.0.0)
     json (2.6.1)
     jwt (2.4.1)
     listen (3.7.1)
@@ -296,7 +293,6 @@ DEPENDENCIES
   capybara (>= 3.26)
   dotenv-rails
   faker
-  jbuilder (~> 2.7)
   listen (~> 3.3)
   minitest-power_assert
   omniauth-github
