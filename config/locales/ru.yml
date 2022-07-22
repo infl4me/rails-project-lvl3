@@ -3,3 +3,15 @@ ru:
   auth:
     signin: Войти
     signout: Выйти
+  bulletins:
+    errors:
+      too_large: слишком большой
+    notice:
+      created: Объявление было успешно создано
+      updated: Объявление было успешно обновлено
+      destroyed: Объявление было успешно удалено
+  categories:
+    notice:
+      created: Категория была успешно создана
+      updated: Категория была успешно обновлена
+      destroyed: Категория была успешно удалена

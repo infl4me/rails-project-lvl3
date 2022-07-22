@@ -25,7 +25,7 @@ class Web::BulletinsController < ApplicationController
     @bulletin = Bulletin.new(bulletin_params)
 
     if @bulletin.save
-      redirect_to @bulletin, notice: 'Bulletin was successfully created.'
+      redirect_to @bulletin, notice: t('bulletins.notice.created')
     else
       render :new
     end
@@ -34,7 +34,7 @@ class Web::BulletinsController < ApplicationController
   # PATCH/PUT /bulletins/1
   def update
     if @bulletin.update(bulletin_params)
-      redirect_to @bulletin, notice: 'Bulletin was successfully updated.'
+      redirect_to @bulletin, notice: t('bulletins.notice.updated')
     else
       render :edit
     end
@@ -43,7 +43,7 @@ class Web::BulletinsController < ApplicationController
   # DELETE /bulletins/1
   def destroy
     @bulletin.destroy
-    redirect_to bulletins_url, notice: 'Bulletin was successfully destroyed.'
+    redirect_to bulletins_url, notice: t('bulletins.notice.destroyed')
   end
 
   private

@@ -3,3 +3,16 @@ en:
   auth:
     signin: Sign In
     signout: Sign Out
+  bulletins:
+    errors:
+      too_large: is too large
+    notice:
+      created: Bulletin was successfully created
+      updated: Bulletin was successfully updated
+      destroyed: Bulletin was successfully deleted
+  categories:
+    notice:
+      created: Category was successfully created
+      updated: Category was successfully updated
+      destroyed: Category was successfully deleted
+
