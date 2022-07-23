@@ -69,6 +69,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'active_storage_validations'
 gem 'omniauth-github'
 gem 'omniauth-rails_csrf_protection'
+gem 'pundit'
 gem 'rails-i18n'
 gem 'rollbar'
 gem 'simple_form'

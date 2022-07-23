@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class Web::BulletinsController < ApplicationController
-  before_action :set_bulletin, only: %i[show edit update destroy]
+  before_action :set_bulletin_instance, only: %i[show edit update destroy]
+  before_action :set_bulletin, only: %i[index new create]
+  after_action :verify_authorized
 
   # GET /bulletins
   def index
@@ -13,6 +15,7 @@ class Web::BulletinsController < ApplicationController
 
   # GET /bulletins/new
   def new
+    authorize Bulletin
     @bulletin = Bulletin.new
   end
 
@@ -21,8 +24,7 @@ class Web::BulletinsController < ApplicationController
 
   # POST /bulletins
   def create
-    # byebug
-    @bulletin = Bulletin.new(bulletin_params)
+    @bulletin = Bulletin.new(bulletin_params.merge({ user: current_user }))
 
     if @bulletin.save
       redirect_to @bulletin, notice: t('bulletins.notice.created')
@@ -49,12 +51,17 @@ class Web::BulletinsController < ApplicationController
   private
 
   # Use callbacks to share common setup or constraints between actions.
-  def set_bulletin
+  def set_bulletin_instance
     @bulletin = Bulletin.find(params[:id])
+    authorize @bulletin
+  end
+
+  def set_bulletin
+    authorize Bulletin
   end
 
   # Only allow a list of trusted parameters through.
   def bulletin_params
-    params.require(:bulletin).permit(:title, :description, :image, :category_id, :user_id, :user_id)
+    params.require(:bulletin).permit(:title, :description, :image, :category_id)
   end
 end

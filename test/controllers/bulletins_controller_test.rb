@@ -4,6 +4,7 @@ require 'test_helper'
 
 class BulletinsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    sign_in users(:user_one)
     @bulletin = bulletins(:bulletin_one)
   end
 

@@ -17,7 +17,7 @@ table
       tr
         td = bulletin.title
         td = bulletin.description
-        td = image_tag bulletin.image
+        td = image_tag bulletin.image, width: 50
         td = bulletin.category.name
         td = bulletin.user.formatted_name
         td = link_to 'Show', bulletin
