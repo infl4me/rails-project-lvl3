@@ -7,7 +7,7 @@ class Web::BulletinsController < Web::ApplicationController
 
   # GET /bulletins
   def index
-    @bulletins = Bulletin.all.order(created_at: :desc)
+    @bulletins = Bulletin.where(state: 'published').order(created_at: :desc)
   end
 
   # GET /bulletins/1
