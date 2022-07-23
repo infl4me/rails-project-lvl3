@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     namespace :admin do
       resources :categories
       resources :users, only: %w[index]
+      resources :bulletins, only: %w[index]
     end
   end
 end

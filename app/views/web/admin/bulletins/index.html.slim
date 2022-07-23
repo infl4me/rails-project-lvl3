@@ -1,0 +1,19 @@
+h1 Listing bulletins
+
+table
+  thead
+    tr
+      th Title
+      th Description
+      th Image
+      th Category
+      th User
+
+  tbody
+    - @bulletins.each do |bulletin|
+      tr
+        td = bulletin.title
+        td = bulletin.description
+        td = image_tag bulletin.image, width: 50
+        td = bulletin.category.name
+        td = bulletin.user.formatted_name
