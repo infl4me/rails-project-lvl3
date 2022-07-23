@@ -3,6 +3,8 @@ en:
   auth:
     signin: Sign In
     signout: Sign Out
+  errors:
+    access_denied: Access Denied
   bulletins:
     errors:
       too_large: is too large

@@ -3,6 +3,8 @@ ru:
   auth:
     signin: Войти
     signout: Выйти
+  errors:
+    access_denied: Доступ запрещен
   bulletins:
     errors:
       too_large: слишком большой

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Web::CategoriesController < ApplicationController
+class Web::Admin::CategoriesController < Web::Admin::ApplicationController
   before_action :set_category, only: %i[show edit update destroy]
 
   # GET /categories
@@ -24,7 +24,7 @@ class Web::CategoriesController < ApplicationController
     @category = Category.new(category_params)
 
     if @category.save
-      redirect_to @category, notice: t('categories.notice.created')
+      redirect_to [:admin, @category], notice: t('categories.notice.created')
     else
       render :new
     end
@@ -33,7 +33,7 @@ class Web::CategoriesController < ApplicationController
   # PATCH/PUT /categories/1
   def update
     if @category.update(category_params)
-      redirect_to @category, notice: t('categories.notice.updated')
+      redirect_to [:admin, @category], notice: t('categories.notice.updated')
     else
       render :edit
     end
@@ -42,7 +42,7 @@ class Web::CategoriesController < ApplicationController
   # DELETE /categories/1
   def destroy
     @category.destroy
-    redirect_to categories_url, notice: t('categories.notice.destroyed')
+    redirect_to admin_categories_url, notice: t('categories.notice.destroyed')
   end
 
   private

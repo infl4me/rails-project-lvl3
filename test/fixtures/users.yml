@@ -2,3 +2,7 @@ user_one:
   name: User one name
   email: asd@asd.com
 
+user_admin:
+  name: User admin
+  email: user_admin@asd.com
+  admin: true

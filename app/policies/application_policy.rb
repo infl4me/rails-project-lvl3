@@ -40,6 +40,10 @@ class ApplicationPolicy
     !!@user
   end
 
+  def user_admin?
+    user_exists? && @user.admin
+  end
+
   def user_owns_record?
     user_exists? && @user == @record.user
   end

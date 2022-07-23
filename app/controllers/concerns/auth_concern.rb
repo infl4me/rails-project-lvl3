@@ -17,4 +17,10 @@ module AuthConcern
   def current_user
     @current_user ||= User.find_by(id: session[:user_id])
   end
+
+  def verify_admin
+    return if signed_in? && @current_user.admin
+
+    redirect_to root_path, alert: t('errors.access_denied')
+  end
 end

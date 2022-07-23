@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Web::BulletinsController < ApplicationController
+class Web::BulletinsController < Web::ApplicationController
   before_action :set_bulletin_instance, only: %i[show edit update destroy]
   before_action :set_bulletin, only: %i[index new create]
   after_action :verify_authorized
