@@ -1,4 +1,4 @@
-h1 = t('bulletins.index')
+= render 'layouts/shared/headline', title: t('bulletins.index')
 
 .row.mt-2
   - @bulletins.each do |bulletin|

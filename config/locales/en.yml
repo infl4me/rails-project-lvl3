@@ -3,6 +3,7 @@ en:
   actions_title: Actions
   admin_panel: Admin Panel
   profile: Profile
+  edit_record: Edit %{name}
   users:
     index: Users
   actions:
@@ -23,7 +24,7 @@ en:
     admin: Admin
   bulletins:
     index: Bulletins
-    new: New Bulletin
+    new: Create Bulletin
     errors:
       too_large: is too large
     alerts:
@@ -41,9 +42,7 @@ en:
       archived: Bulletin was successfully archived
   categories:
     index: Categories
-    new: New Category
-    to_new: Create Category
-    editing: "Editing %{name}"
+    new: Create Category
     notices:
       created: Category was successfully created
       updated: Category was successfully updated

@@ -1,9 +1,10 @@
-p = "Title: #{@bulletin.title}"
-p = "Description: #{@bulletin.description}"
-p = "Category: #{@bulletin.category.name}"
-p = "User: #{@bulletin.user.formatted_name}"
-p = image_tag @bulletin.image, width: 100, class: 'img-thumbnail mb-2'
+= render 'layouts/shared/headline', title: @bulletin.title
 
-=> link_to 'Edit', edit_bulletin_path(@bulletin)
-'|
-=< link_to 'Back', bulletins_path
+.row
+  .col-8
+    = image_tag @bulletin.image, class: 'img-thumbnail mb-2'
+    p = @bulletin.description
+  .col-4
+    .card
+      .card-body
+        h1.h5.card-title = @bulletin.user.formatted_name

@@ -1,7 +1,2 @@
-h1 Editing bulletin
-
-== render 'form'
-
-=> link_to 'Show', @bulletin
-'|
-=< link_to 'Back', bulletins_path
+= render 'layouts/shared/headline', title: t('edit_record', name: @bulletin.title)
+= render 'form'

@@ -3,6 +3,7 @@ ru:
   actions_title: Действия
   admin_panel: Панель администратора
   profile: Профиль
+  edit_record: Редактировать %{name}
   users:
     index: Пользователи
   actions:
@@ -41,9 +42,7 @@ ru:
       archived: Объявление было успешно заархивировано
   categories:
     index: Категории
-    new: Новая категория
-    to_new: Создать категорию
-    editing: Редактирование %{name}
+    new: Создать категорию
     notices:
       created: Категория была успешно создана
       updated: Категория была успешно обновлена

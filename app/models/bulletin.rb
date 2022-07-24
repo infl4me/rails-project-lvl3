@@ -9,6 +9,7 @@ class Bulletin < ApplicationRecord
 
   validates :title, presence: true
   validates :description, presence: true
+  validates :image, presence: true
   validates :image, attached: true,
                     content_type: %w[image/png image/jpg image/jpeg],
                     size: { less_than: 5.megabytes, message: I18n.t('bulletins.errors.too_large') }
