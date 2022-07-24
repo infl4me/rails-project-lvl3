@@ -14,6 +14,9 @@ ru:
       bulletin:
         title: Заголовок
         created_at: Создано
+        category: Категория
+        description: Описание
+        image: Изображение
         state: Состояние
         state/one: Состояние
         state/few: Состояния
@@ -26,3 +29,8 @@ ru:
         state/archived: В архиве
       category:
         name: Название
+        created_at: Создано
+      user:
+        name: Имя
+        email: Эмейл
+        created_at: Зарегистрирован

@@ -1,15 +1,17 @@
-= render 'layouts/shared/headline', title: t('users.index')
+.row
+  .col-md-3
+    = render 'web/admin/shared/sidebar'
+  .col-md-9
+    table.table
+      thead
+        tr
+          th = User.human_attribute_name(:name)
+          th = User.human_attribute_name(:email)
+          th = User.human_attribute_name(:created_at)
 
-table.table
-  thead
-    tr
-      th Name
-      th Email
-      th Registered At
-
-  tbody
-    - @users.each do |user|
-      tr
-        td = user.name || '—'
-        td = user.email
-        td = user.created_at.strftime('%F %T')
+      tbody
+        - @users.each do |user|
+          tr
+            td = user.name || '—'
+            td = user.email
+            td = user.created_at.strftime('%F %T')

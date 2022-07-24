@@ -1,0 +1,9 @@
+ul.nav.nav-pills.flex-column
+  li.nav-item
+    = link_to t('admin_nav.moderation'), admin_root_path, class: class_names('nav-link', 'link-dark', { active: current_page?(admin_root_path) })
+  li.nav-item
+    = link_to t('admin_nav.all_bulletins'), admin_bulletins_path, class: class_names('nav-link', 'link-dark', { active: current_page?(admin_bulletins_path) })
+  li.nav-item
+    = link_to t('admin_nav.categories'), admin_categories_path, class: class_names('nav-link', 'link-dark', { active: current_page?(admin_categories_path) })
+  li.nav-item
+    = link_to t('admin_nav.users'), admin_users_path, class: class_names('nav-link', 'link-dark', { active: current_page?(admin_users_path) })

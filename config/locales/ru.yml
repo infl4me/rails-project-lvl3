@@ -47,3 +47,8 @@ ru:
       created: Категория была успешно создана
       updated: Категория была успешно обновлена
       destroyed: Категория была успешно удалена
+  admin_nav:
+    moderation: Модерация
+    all_bulletins: Все объявления
+    categories: Категории
+    users: Пользователи

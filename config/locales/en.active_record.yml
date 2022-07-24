@@ -13,3 +13,5 @@ en:
         state/published: Published
         state/rejected: Rejected
         state/archived: Archived
+      user:
+        created_at: Registered At

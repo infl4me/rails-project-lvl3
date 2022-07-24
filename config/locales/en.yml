@@ -47,3 +47,8 @@ en:
       created: Category was successfully created
       updated: Category was successfully updated
       destroyed: Category was successfully deleted
+  admin_nav:
+    moderation: Moderation
+    all_bulletins: All Bulletins
+    categories: Categories
+    users: Users
