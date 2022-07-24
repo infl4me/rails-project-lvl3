@@ -20,9 +20,8 @@ Rails.application.routes.draw do
     end
 
     namespace :admin do
-      root 'bulletins#under_moderation'
+      root 'bulletins#index'
 
-      resources :bulletins, only: %w[index]
       resources :users, only: %w[index]
       resources :categories, only: %w[index]
     end
