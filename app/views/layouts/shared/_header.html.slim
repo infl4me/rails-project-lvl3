@@ -3,7 +3,8 @@ header.container.mb-2
     .navbar.navbar-expand-md.navbar-light.me-auto
       = link_to t('app_name'), root_path, class: 'navbar-brand me-md-4'
     - if signed_in?
-      = "Hello, #{current_user.formatted_name}!"
+      = link_to t('nav.admin'), admin_root_path, class: 'ms-3 link-dark' if current_user.admin
+      = link_to t('nav.profile'), profile_root_path, class: 'ms-3 link-dark'
       = link_to t('auth.signout'), auth_destroy_path, method: :delete, class: 'ms-3 link-dark'
     - else
       = link_to t('auth.signin'), auth_request_path('github'), method: :post, class: 'link-dark'

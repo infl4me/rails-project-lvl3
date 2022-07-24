@@ -11,7 +11,7 @@ module AuthConcern
   end
 
   def signed_in?
-    !!current_user
+    current_user.present?
   end
 
   def current_user
@@ -19,8 +19,12 @@ module AuthConcern
   end
 
   def verify_admin
-    return if signed_in? && @current_user.admin
+    return if signed_in? && current_user.admin
 
     redirect_to root_path, alert: t('errors.access_denied')
+  end
+
+  def verify_profile
+    redirect_to root_path, alert: t('errors.access_denied') unless signed_in?
   end
 end

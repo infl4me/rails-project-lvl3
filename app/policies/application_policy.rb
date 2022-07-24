@@ -37,7 +37,7 @@ class ApplicationPolicy
   end
 
   def user_exists?
-    !!@user
+    @user.present?
   end
 
   def user_admin?

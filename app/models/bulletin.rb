@@ -17,7 +17,7 @@ class Bulletin < ApplicationRecord
     state :draft, initial: true
     state :under_moderation, :published, :rejected, :archived
 
-    event :to_moderation do
+    event :to_moderate do
       transitions from: :draft, to: :under_moderation
     end
 

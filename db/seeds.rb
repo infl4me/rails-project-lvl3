@@ -10,8 +10,15 @@ if Rails.env.development?
     name: 'asd'
   )
 
-  5.times do
-    bulletin = user.bulletins.find_or_initialize_by(
+  user_admin = User.find_or_create_by(
+    email: 'hellpl4y@gmail.com',
+    name: 'User Admin',
+    admin: true
+  )
+
+  30.times do
+    current_user = [user, user_admin].sample
+    bulletin = current_user.bulletins.find_or_initialize_by(
       title: Faker::Lorem.word,
       description: Faker::Lorem.paragraph(sentence_count: 2),
       category: Category.all.sample

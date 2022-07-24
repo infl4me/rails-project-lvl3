@@ -1,13 +1,15 @@
-h1 Listing users
+h1 Users
 
-table
+table.table
   thead
     tr
       th Name
       th Email
+      th Registered At
 
   tbody
     - @users.each do |user|
       tr
         td = user.name || '—'
         td = user.email
+        td = user.created_at.strftime('%F %T')

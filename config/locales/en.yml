@@ -5,13 +5,25 @@ en:
     signout: Sign Out
   errors:
     access_denied: Access Denied
+  nav:
+    profile: Profile
+    admin: Admin
   bulletins:
     errors:
       too_large: is too large
-    notice:
+    alerts:
+      under_moderation: Bulletin couldn't be sent to moderation
+      published: Bulletin couldn't be published
+      rejected: Bulletin couldn't be rejected
+      archived: Bulletin couldn't be archived
+    notices:
       created: Bulletin was successfully created
       updated: Bulletin was successfully updated
       destroyed: Bulletin was successfully deleted
+      under_moderation: Bulletin was successfully sent to moderation
+      published: Bulletin was successfully published
+      rejected: Bulletin was successfully rejected
+      archived: Bulletin was successfully archived
   categories:
     notice:
       created: Category was successfully created

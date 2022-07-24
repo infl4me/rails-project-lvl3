@@ -20,4 +20,20 @@ class BulletinPolicy < ApplicationPolicy
   def destroy?
     user_owns_record? || user_admin?
   end
+
+  def to_moderate?
+    user_owns_record? || user_admin?
+  end
+
+  def publish?
+    user_admin?
+  end
+
+  def reject?
+    user_admin?
+  end
+
+  def archive?
+    user_owns_record? || user_admin?
+  end
 end

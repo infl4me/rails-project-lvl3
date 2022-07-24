@@ -9,7 +9,7 @@ class Web::Admin::BulletinsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get index' do
-    get admin_bulletins_url
+    get admin_root_path
     assert_response :success
   end
 end
