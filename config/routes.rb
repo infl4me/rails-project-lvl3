@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
     namespace :admin do
       root 'bulletins#index'
-
+      # TODO:
       resources :categories
       resources :users, only: %w[index]
     end

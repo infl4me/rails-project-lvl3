@@ -1,21 +1,22 @@
-h1 = current_user.formatted_name
+h1 = t('profile')
 
 table.table
   thead
     tr
-      th Title
-      th.ms-5 Status
-      th.ms-5 Created At
-      th.ms-5 Actions
+      th = Bulletin.human_attribute_name(:title)
+      th = Bulletin.human_attribute_name(:state)
+      th = Bulletin.human_attribute_name(:created_at)
+      th = t('actions_title')
 
   tbody
     - @bulletins.each do |bulletin|
       tr
         td = bulletin.title
-        td = bulletin.state.humanize
+        td = bulletin.aasm.human_state
         td = bulletin.created_at.strftime('%F %T')
         td
-          = link_to 'Show', bulletin, class: 'me-2'
-          = link_to 'Edit', edit_bulletin_path(bulletin), class: 'me-2'
-          = link_to 'To Moderation', to_moderate_bulletin_path(bulletin), method: :post, class: 'me-2' if bulletin.may_to_moderate?
-          = link_to 'Archive', archive_bulletin_path(bulletin), method: :post, data: { confirm: 'Are you sure?' }, class: 'text-danger' if bulletin.may_archive?
+          = link_to t('actions.show'), bulletin, class: 'me-2'
+          = link_to t('actions.edit'), edit_bulletin_path(bulletin), class: 'me-2'
+          = link_to Bulletin.aasm.human_event_name(:to_moderate), to_moderate_bulletin_path(bulletin), method: :post, class: 'me-2' if bulletin.may_to_moderate?
+          = link_to Bulletin.aasm.human_event_name(:archive), archive_bulletin_path(bulletin), method: :post, data: { confirm: 'Are you sure?' }, class: 'text-danger' if bulletin.may_archive?
+

@@ -3,6 +3,6 @@
 class Web::Admin::BulletinsController < Web::Admin::ApplicationController
   # GET /categories
   def index
-    @bulletins = Bulletin.all
+    @bulletins = Bulletin.where(state: :under_moderation)
   end
 end

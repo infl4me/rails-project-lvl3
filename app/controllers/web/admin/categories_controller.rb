@@ -24,7 +24,7 @@ class Web::Admin::CategoriesController < Web::Admin::ApplicationController
     @category = Category.new(category_params)
 
     if @category.save
-      redirect_to [:admin, @category], notice: t('categories.notice.created')
+      redirect_to [:admin, @category], notice: t('categories.notices.created')
     else
       render :new
     end
@@ -33,7 +33,7 @@ class Web::Admin::CategoriesController < Web::Admin::ApplicationController
   # PATCH/PUT /categories/1
   def update
     if @category.update(category_params)
-      redirect_to [:admin, @category], notice: t('categories.notice.updated')
+      redirect_to [:admin, @category], notice: t('categories.notices.updated')
     else
       render :edit
     end
@@ -42,7 +42,7 @@ class Web::Admin::CategoriesController < Web::Admin::ApplicationController
   # DELETE /categories/1
   def destroy
     @category.destroy
-    redirect_to admin_categories_url, notice: t('categories.notice.destroyed')
+    redirect_to admin_categories_url, notice: t('categories.notices.destroyed')
   end
 
   private

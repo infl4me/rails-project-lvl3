@@ -1,0 +1,15 @@
+en:
+  activerecord:
+    events:
+      bulletin:
+        to_moderate: To Moderation
+        publish: Publish
+        reject: Reject
+        archive: Archive
+    attributes:
+      bulletin:
+        state/draft: Draft
+        state/under_moderation: Moderating
+        state/published: Published
+        state/rejected: Rejected
+        state/archived: Archived

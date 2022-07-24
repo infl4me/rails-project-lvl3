@@ -1,21 +1,18 @@
-h1 Bulletins
+h1 = t('admin_panel')
 
 table.table
   thead
     tr
-      th Title
-      th Description
-      th Status
-      th Image
-      th Category
-      th User
+      th = Bulletin.human_attribute_name(:title)
+      th = Bulletin.human_attribute_name(:created_at)
+      th = t('actions_title')
 
   tbody
     - @bulletins.each do |bulletin|
       tr
-        td = bulletin.title
-        td = bulletin.description
-        td = bulletin.state.humanize
-        td = image_tag bulletin.image, width: 50
-        td = bulletin.category.name
-        td = bulletin.user.formatted_name
+        td = link_to bulletin.title, bulletin
+        td = bulletin.created_at.strftime('%F %T')
+        td
+          = link_to Bulletin.aasm.human_event_name(:publish), publish_bulletin_path(bulletin), method: :post, class: 'me-2' if bulletin.may_publish?
+          = link_to Bulletin.aasm.human_event_name(:reject), reject_bulletin_path(bulletin), method: :post, class: 'me-2' if bulletin.may_reject?
+          = link_to Bulletin.aasm.human_event_name(:archive), archive_bulletin_path(bulletin), method: :post, data: { confirm: 'Are you sure?' }, class: 'text-danger' if bulletin.may_archive?

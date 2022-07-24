@@ -1,8 +1,15 @@
 en:
-  app_name: "Bullet Board"
+  app_name: Bullet Board
+  actions_title: Actions
+  admin_panel: Admin Panel
+  profile: Profile
+  users: Users
+  actions:
+    show: Show
+    edit: Edit
   auth:
-    signin: Sign In
-    signout: Sign Out
+    sign_in: Sign In
+    sign_out: Sign Out
   errors:
     access_denied: Access Denied
   nav:
@@ -25,8 +32,7 @@ en:
       rejected: Bulletin was successfully rejected
       archived: Bulletin was successfully archived
   categories:
-    notice:
+    notices:
       created: Category was successfully created
       updated: Category was successfully updated
       destroyed: Category was successfully deleted
-

@@ -1,0 +1,22 @@
+ru:
+  activerecord:
+    events:
+      bulletin:
+        to_moderate: На модерацию
+        publish: Опубликовать
+        reject: Отклонить
+        archive: В архив
+    attributes:
+      bulletin:
+        title: Заголовок
+        created_at: Создано
+        state: Состояние
+        state/one: Состояние
+        state/few: Состояния
+        state/many: Состояний
+        state/other: Состояний
+        state/draft: Черновик
+        state/under_moderation: На модерации
+        state/published: Опубликовано
+        state/rejected: Отклонено
+        state/archived: В архиве
