@@ -1,4 +1,6 @@
-h1 = t('profile')
+.d-flex.justify-content-between.align-items-center
+  h1 = t('profile')
+  = link_to t('bulletins.new'), new_bulletin_path
 
 table.table
   thead
@@ -24,7 +26,3 @@ table.table
               method: :post,
               data: { confirm: t('confirmations.archive') },
               class: 'text-danger'
-
-br
-
-= link_to t('bulletins.new'), new_bulletin_path

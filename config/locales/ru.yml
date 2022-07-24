@@ -22,6 +22,7 @@ ru:
     profile: Профиль
     admin: Админка
   bulletins:
+    index: Объявления
     new: Создать объявление
     errors:
       too_large: слишком большой

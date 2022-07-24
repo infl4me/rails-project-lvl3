@@ -1,25 +1,11 @@
-h1 Listing bulletins
+h1 = t('bulletins.index')
 
-table
-  thead
-    tr
-      th Title
-      th Description
-      th Image
-      th Category
-      th User
-      th
-      th
-      th
-
-  tbody
-    - @bulletins.each do |bulletin|
-      tr
-        td = bulletin.title
-        td = bulletin.description
-        td = image_tag bulletin.image, width: 50
-        td = bulletin.category.name
-        td = bulletin.user.formatted_name
-        td = link_to 'Show', bulletin
-        td = link_to 'Edit', edit_bulletin_path(bulletin)
-        td = link_to 'Destroy', bulletin, data: { confirm: t('confirmations.delete') }, method: :delete
+.row.mt-2
+  - @bulletins.each do |bulletin|
+    .col-3.pt-2
+      .card.shadow-sm
+        = image_tag bulletin.image, height: 200, class: 'card-img-top'
+        .card-body
+          = link_to bulletin
+            h5.card-title = bulletin.title
+          h6.card-subtitle.mb-2.text-muted = distance_of_time_in_words(bulletin.created_at, Time.current)
