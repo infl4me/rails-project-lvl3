@@ -22,8 +22,4 @@ table
         td = bulletin.user.formatted_name
         td = link_to 'Show', bulletin
         td = link_to 'Edit', edit_bulletin_path(bulletin)
-        td = link_to 'Destroy', bulletin, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Bulletin', new_bulletin_path
+        td = link_to 'Destroy', bulletin, data: { confirm: t('confirmations.delete') }, method: :delete

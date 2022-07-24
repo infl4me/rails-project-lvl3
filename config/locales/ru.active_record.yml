@@ -6,6 +6,10 @@ ru:
         publish: Опубликовать
         reject: Отклонить
         archive: В архив
+    models:
+      category:
+        one: Категория
+        other: Категории
     attributes:
       bulletin:
         title: Заголовок
@@ -20,3 +24,5 @@ ru:
         state/published: Опубликовано
         state/rejected: Отклонено
         state/archived: В архиве
+      category:
+        name: Название

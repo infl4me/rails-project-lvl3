@@ -3,10 +3,16 @@ ru:
   actions_title: Действия
   admin_panel: Панель администратора
   profile: Профиль
-  users: Пользователи
+  users:
+    index: Пользователи
   actions:
     show: Показать
     edit: Редактировать
+    destroy: Удалить
+    submit_form: Подтвердить
+  confirmations:
+    delete: Вы действительно хотите удалить это?
+    archive: Вы действительно хотите отправить это в архив?
   auth:
     sign_in: Войти
     sign_out: Выйти
@@ -16,6 +22,7 @@ ru:
     profile: Профиль
     admin: Админка
   bulletins:
+    new: Создать объявление
     errors:
       too_large: слишком большой
     alerts:
@@ -32,6 +39,10 @@ ru:
       rejected: Объявление было успешно отклонено
       archived: Объявление было успешно заархивировано
   categories:
+    index: Категории
+    new: Новая категория
+    to_new: Создать категорию
+    editing: Редактирование %{name}
     notices:
       created: Категория была успешно создана
       updated: Категория была успешно обновлена

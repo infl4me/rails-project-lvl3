@@ -3,10 +3,16 @@ en:
   actions_title: Actions
   admin_panel: Admin Panel
   profile: Profile
-  users: Users
+  users:
+    index: Users
   actions:
     show: Show
     edit: Edit
+    destroy: Delete
+    submit_form: Submit
+  confirmations:
+    delete: Are you sure you want to delete this?
+    archive: Are you sure you want to archive this?
   auth:
     sign_in: Sign In
     sign_out: Sign Out
@@ -16,6 +22,8 @@ en:
     profile: Profile
     admin: Admin
   bulletins:
+    index: Bulletins
+    new: New Bulletin
     errors:
       too_large: is too large
     alerts:
@@ -32,6 +40,10 @@ en:
       rejected: Bulletin was successfully rejected
       archived: Bulletin was successfully archived
   categories:
+    index: Categories
+    new: New Category
+    to_new: Create Category
+    editing: "Editing %{name}"
     notices:
       created: Category was successfully created
       updated: Category was successfully updated
