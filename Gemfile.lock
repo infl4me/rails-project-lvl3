@@ -196,6 +196,10 @@ GEM
       thor (~> 1.0)
     rainbow (3.1.1)
     rake (13.0.6)
+    ransack (2.6.0)
+      activerecord (>= 6.0.4)
+      activesupport (>= 6.0.4)
+      i18n
     rash_alt (0.4.12)
       hashie (>= 3.4)
     rb-fsevent (0.11.1)
@@ -313,6 +317,7 @@ DEPENDENCIES
   pundit
   rails (~> 6.1.4, >= 6.1.4.4)
   rails-i18n
+  ransack
   rollbar
   rubocop
   rubocop-rails

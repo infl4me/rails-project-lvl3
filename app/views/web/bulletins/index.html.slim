@@ -1,5 +1,19 @@
 = render 'layouts/shared/headline', title: t('bulletins.index')
 
+= search_form_for @q do |f|
+  .row.my-2
+    .col-5
+      .form-group.mb-3.string
+        = f.search_field :title_cont, class: 'form-control'
+        small.form-text.text-muted = t('bulletins.search/title/hint')
+    .col-4
+      .form-group.mb-3.select
+        = f.select(:category_id_eq, @category_options, { include_blank: '' }, { class: 'form-control select' })
+        small.form-text.text-muted = t('bulletins.select/category/hint')
+    .col-3.d-flex.align-items-start.justify-content-end
+      = f.submit t('bulletins.search/submit'), class: 'btn btn-primary me-2'
+      = link_to t('bulletins.search/reset'), root_path, class: 'btn btn-outline-primary'
+
 .row.mt-2
   - @bulletins.each do |bulletin|
     .col-3.pt-2

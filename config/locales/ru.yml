@@ -40,6 +40,10 @@ ru:
       published: Объявление было успешно опубликовано
       rejected: Объявление было успешно отклонено
       archived: Объявление было успешно заархивировано
+    search/title/hint: Искать по названию объявления
+    select/category/hint: Выбрать категорию
+    search/submit: Поиск
+    search/reset: Сброс
   categories:
     index: Категории
     new: Создать категорию

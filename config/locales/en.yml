@@ -40,6 +40,10 @@ en:
       published: Bulletin was successfully published
       rejected: Bulletin was successfully rejected
       archived: Bulletin was successfully archived
+    search/title/hint: Search by title
+    select/category/hint: Select Category
+    search/submit: Search
+    search/reset: Reset
   categories:
     index: Categories
     new: Create Category

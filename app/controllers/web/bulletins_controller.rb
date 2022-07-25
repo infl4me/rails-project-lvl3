@@ -8,7 +8,9 @@ class Web::BulletinsController < Web::ApplicationController
 
   # GET /bulletins
   def index
-    @bulletins = Bulletin.where(state: 'published').order(created_at: :desc)
+    @q = Bulletin.ransack(params[:q])
+    @bulletins = @q.result.where(state: 'published').order(created_at: :desc)
+    @category_options = Category.all.pluck(:name, :id)
   end
 
   # GET /bulletins/1
