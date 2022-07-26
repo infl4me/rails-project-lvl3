@@ -3,6 +3,8 @@
 class Web::Profile::BulletinsController < Web::Profile::ApplicationController
   # GET /categories
   def index
-    @bulletins = current_user.bulletins
+    @q = current_user.bulletins.ransack(params[:q])
+    @bulletins = @q.result.page(params[:page]).per(10)
+    @state_options = Bulletin.aasm.states.map { |state| [state.localized_name, state.name] }
   end
 end

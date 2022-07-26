@@ -42,6 +42,7 @@ ru:
       archived: Объявление было успешно заархивировано
     search/title/hint: Искать по названию объявления
     select/category/hint: Выбрать категорию
+    select/state/hint: Выбрать по состоянию
     search/submit: Поиск
     search/reset: Сброс
   categories:

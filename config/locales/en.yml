@@ -42,6 +42,7 @@ en:
       archived: Bulletin was successfully archived
     search/title/hint: Search by title
     select/category/hint: Select Category
+    select/state/hint: Select State
     search/submit: Search
     search/reset: Reset
   categories:
