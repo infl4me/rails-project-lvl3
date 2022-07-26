@@ -6,6 +6,7 @@ ru:
   edit_record: Редактировать %{name}
   users:
     index: Пользователи
+    search/name_or_email: Искать по имени или эмейлу
   actions:
     show: Показать
     edit: Редактировать
@@ -43,8 +44,6 @@ ru:
     search/title/hint: Искать по названию объявления
     select/category/hint: Выбрать категорию
     select/state/hint: Выбрать по состоянию
-    search/submit: Поиск
-    search/reset: Сброс
   categories:
     index: Категории
     new: Создать категорию
@@ -55,8 +54,10 @@ ru:
   admin_nav:
     moderation: Модерация
     all_bulletins: Все объявления
-    categories: Категории
     users: Пользователи
+    categories: Категории
+  search_form/submit: Поиск
+  search_form/reset: Сброс
   views:
     pagination:
       first: Первая

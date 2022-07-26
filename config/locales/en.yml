@@ -6,6 +6,7 @@ en:
   edit_record: Edit %{name}
   users:
     index: Users
+    search/name_or_email: Search user by name or email
   actions:
     show: Show
     edit: Edit
@@ -43,8 +44,6 @@ en:
     search/title/hint: Search by title
     select/category/hint: Select Category
     select/state/hint: Select State
-    search/submit: Search
-    search/reset: Reset
   categories:
     index: Categories
     new: Create Category
@@ -57,3 +56,5 @@ en:
     all_bulletins: All Bulletins
     categories: Categories
     users: Users
+  search_form/submit: Search
+  search_form/reset: Reset
