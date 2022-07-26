@@ -3,6 +3,6 @@
 class Web::Admin::UsersController < Web::Admin::ApplicationController
   # GET /categories
   def index
-    @users = User.all
+    @users = User.page(params[:page])
   end
 end

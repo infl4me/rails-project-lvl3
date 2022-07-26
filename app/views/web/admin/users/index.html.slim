@@ -15,3 +15,5 @@
             td = user.name || '—'
             td = user.email
             td = user.created_at.strftime('%F %T')
+
+    = paginate @users

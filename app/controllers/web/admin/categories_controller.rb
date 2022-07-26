@@ -3,6 +3,6 @@
 class Web::Admin::CategoriesController < Web::Admin::ApplicationController
   # GET /admin/categories
   def index
-    @categories = Category.all
+    @categories = Category.page(params[:page])
   end
 end

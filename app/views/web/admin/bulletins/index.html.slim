@@ -2,6 +2,7 @@
   .col-md-3
     = render 'web/admin/shared/sidebar'
   .col-md-9
+    = render 'web/shared/bulletin_search_form', options: { title: true, category: true }
     table.table
       thead
         tr
@@ -21,3 +22,5 @@
                   archive_bulletin_path(bulletin), method: :post,
                   data: { confirm: t('confirmations.archive') },
                   class: 'text-danger'
+    .mt-5
+      = paginate @bulletins

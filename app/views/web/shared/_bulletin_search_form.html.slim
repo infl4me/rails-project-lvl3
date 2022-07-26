@@ -1,0 +1,18 @@
+= search_form_for @q, url: url_for do |f|
+  .row.my-2
+    .col-5
+      .form-group.mb-3.string
+        - if options[:title]
+          = f.search_field :title_cont, class: 'form-control'
+          small.form-text.text-muted = t('bulletins.search/title/hint')
+    .col-4
+      .form-group.mb-3.select
+        - if options[:state]
+          = f.select(:state_eq, @state_options, { include_blank: '' }, { class: 'form-control select' })
+          small.form-text.text-muted = t('bulletins.select/state/hint')
+        - if options[:category]
+          = f.select(:category_id_eq, @category_options, { include_blank: '' }, { class: 'form-control select' })
+          small.form-text.text-muted = t('bulletins.select/category/hint')
+    .col-3.d-flex.align-items-start.justify-content-end
+      = f.submit t('bulletins.search/submit'), class: 'btn btn-primary me-2'
+      = link_to t('bulletins.search/reset'), url_for, class: 'btn btn-outline-primary'
