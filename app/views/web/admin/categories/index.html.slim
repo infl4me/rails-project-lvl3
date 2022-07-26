@@ -3,6 +3,15 @@
     = render 'web/admin/shared/sidebar'
     = link_to t('categories.new'), new_category_path, class: class_names('btn', 'btn-secondary', 'w-100', 'mt-3')
   .col-md-9
+    = search_form_for @q, url: url_for do |f|
+      .row.my-2
+        .col-8
+          .form-group.mb-3.string
+            = f.search_field :name_cont, class: 'form-control'
+            small.form-text.text-muted = t('categories.search/name')
+        .col-4.d-flex.align-items-start.justify-content-end
+          = f.submit t('search_form/submit'), class: 'btn btn-primary me-2'
+          = link_to t('search_form/reset'), url_for, class: 'btn btn-outline-primary'
     table.table
       thead
         tr

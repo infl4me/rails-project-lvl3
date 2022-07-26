@@ -47,6 +47,7 @@ en:
   categories:
     index: Categories
     new: Create Category
+    search/name: Search by name
     notices:
       created: Category was successfully created
       updated: Category was successfully updated
