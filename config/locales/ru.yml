@@ -56,3 +56,9 @@ ru:
     all_bulletins: Все объявления
     categories: Категории
     users: Пользователи
+  views:
+    pagination:
+      first: Первая
+      last: Последняя
+      next: Следующая
+      previous: Предыдущая

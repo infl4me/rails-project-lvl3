@@ -23,3 +23,6 @@
           = link_to bulletin
             h5.card-title = bulletin.title
           h6.card-subtitle.mb-2.text-muted = distance_of_time_in_words(bulletin.created_at, Time.current)
+
+.mt-5
+  = paginate(@bulletins)
