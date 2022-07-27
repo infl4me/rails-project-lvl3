@@ -15,11 +15,11 @@
             td = link_to bulletin.title, bulletin
             td = bulletin.created_at.strftime('%F %T')
             td
-              = link_to Bulletin.aasm.human_event_name(:publish), publish_bulletin_path(bulletin), method: :post, class: 'me-2' if bulletin.may_publish?
-              = link_to Bulletin.aasm.human_event_name(:reject), reject_bulletin_path(bulletin), method: :post, class: 'me-2' if bulletin.may_reject?
+              = link_to Bulletin.aasm.human_event_name(:publish), publish_admin_bulletin_path(bulletin), method: :patch, class: 'me-2' if bulletin.may_publish?
+              = link_to Bulletin.aasm.human_event_name(:reject), reject_admin_bulletin_path(bulletin), method: :patch, class: 'me-2' if bulletin.may_reject?
               - if bulletin.may_archive?
                 = link_to Bulletin.aasm.human_event_name(:archive),
-                  archive_bulletin_path(bulletin), method: :post,
+                  archive_admin_bulletin_path(bulletin), method: :patch,
                   data: { confirm: t('confirmations.archive') },
                   class: 'text-danger'
     .mt-5

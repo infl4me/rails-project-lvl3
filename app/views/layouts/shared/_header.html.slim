@@ -4,7 +4,7 @@ header.container.mb-2
       = link_to t('app_name'), root_path, class: 'navbar-brand me-md-4'
     - if signed_in?
       = link_to t('nav.admin'), admin_root_path, class: 'ms-3 link-dark' if current_user.admin
-      = link_to t('nav.profile'), profile_root_path, class: 'ms-3 link-dark'
+      = link_to t('nav.profile'), profile_path, class: 'ms-3 link-dark'
       = link_to t('auth.sign_out'), auth_destroy_path, method: :delete, class: 'ms-3 link-dark'
     - else
       = link_to t('auth.sign_in'), auth_request_path('github'), method: :post, class: 'link-dark'

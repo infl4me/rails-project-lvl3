@@ -54,6 +54,6 @@ class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
       delete bulletin_url(@bulletin)
     end
 
-    assert_redirected_to bulletins_url
+    assert_redirected_to profile_path
   end
 end

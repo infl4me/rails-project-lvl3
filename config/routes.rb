@@ -8,26 +8,28 @@ Rails.application.routes.draw do
     get 'auth/:provider/callback', to: 'auth#callback', as: :callback_auth
     delete 'auth/destroy', to: 'auth#destroy'
 
-    resources :categories, except: %w[index show]
-
     resources :bulletins do
       member do
-        post 'to_moderate'
-        post 'publish'
-        post 'reject'
-        post 'archive'
+        patch 'to_moderate'
+        patch 'archive'
       end
     end
 
     namespace :admin do
       root 'bulletins#index'
 
+      resources :bulletins, only: %w[index] do
+        member do
+          patch 'publish'
+          patch 'reject'
+          patch 'archive'
+        end
+      end
+
       resources :users, only: %w[index]
-      resources :categories, only: %w[index]
+      resources :categories
     end
 
-    namespace :profile do
-      root 'bulletins#index'
-    end
+    get 'profile', to: 'profile/bulletins#index'
   end
 end

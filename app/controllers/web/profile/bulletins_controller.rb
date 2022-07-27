@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Web::Profile::BulletinsController < Web::Profile::ApplicationController
-  # GET /categories
   def index
     @q = current_user.bulletins.ransack(params[:q])
     @bulletins = @q.result.page(params[:page])
