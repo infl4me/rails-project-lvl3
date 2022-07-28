@@ -9,22 +9,22 @@ class Web::Admin::CategoriesAuthControllerTest < ActionDispatch::IntegrationTest
     sign_in @user
   end
 
-  test '(auth) should not get index' do
+  test 'should not be permitted to get index' do
     get admin_categories_url
     assert_redirected_to root_path
   end
 
-  test '(auth) should not get new' do
+  test 'should not be permitted to get new' do
     get new_admin_category_url
     assert_redirected_to root_path
   end
 
-  test '(auth) should not show bulletin' do
+  test 'should not be permitted to show bulletin' do
     get admin_category_url(@category)
     assert_redirected_to root_path
   end
 
-  test '(auth) should not create category' do
+  test 'should not be permitted to create category' do
     assert_difference('Category.count', 0) do
       post admin_categories_url, params: { category: { name: @category.name } }
     end
@@ -32,17 +32,17 @@ class Web::Admin::CategoriesAuthControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_path
   end
 
-  test '(auth) should not get edit' do
+  test 'should not be permitted to get edit' do
     get edit_admin_category_url(@category)
     assert_redirected_to root_path
   end
 
-  test '(auth) should not update category' do
+  test 'should not be permitted to update category' do
     patch admin_category_url(@category), params: { category: { name: @category.name } }
     assert_redirected_to root_path
   end
 
-  test '(auth) should not destroy category' do
+  test 'should not be permitted to destroy category' do
     assert_difference('Category.count', 0) do
       delete admin_category_url(@category)
     end

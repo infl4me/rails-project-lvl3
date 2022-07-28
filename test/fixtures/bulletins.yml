@@ -1,6 +1,14 @@
 bulletin_one:
   title: bulletin 1
-  description: blablabla
+  description: bulletin 1 description
   category: category_two
   user: user_one
+  state: draft
+
+bulletin_under_moderation:
+  title: bulletin 2
+  description: bulletin 2 description
+  category: category_two
+  user: user_one
+  state: under_moderation
 

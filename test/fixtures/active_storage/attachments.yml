@@ -4,3 +4,8 @@ sample_image:
   record: bulletin_one
   blob: bulletin_one_image_blob
 
+sample_image2:
+  name: image
+  record_type: Bulletin
+  record: bulletin_under_moderation
+  blob: bulletin_one_image_blob

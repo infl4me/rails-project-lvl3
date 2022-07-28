@@ -33,9 +33,9 @@ class Web::Admin::BulletinsController < Web::Admin::ApplicationController
   def archive
     if @bulletin.may_archive?
       @bulletin.archive!
-      redirect_to profile_path, notice: t('bulletins.notices.archived')
+      redirect_to admin_root_path, notice: t('bulletins.notices.archived')
     else
-      redirect_to profile_path, alert: t('bulletins.alerts.archived')
+      redirect_to admin_root_path, alert: t('bulletins.alerts.archived')
     end
   end
 end
