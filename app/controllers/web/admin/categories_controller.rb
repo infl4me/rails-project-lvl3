@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
 class Web::Admin::CategoriesController < Web::Admin::ApplicationController
-  before_action :set_category, only: %i[edit update destroy]
+  before_action :set_category, only: %i[edit update destroy show]
 
   def index
     @q = Category.ransack(params[:q])
     @categories = @q.result.page(params[:page])
   end
+
+  def show; end
 
   def new
     @category = Category.new

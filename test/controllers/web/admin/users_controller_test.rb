@@ -12,4 +12,10 @@ class Web::Admin::UsersControllerTest < ActionDispatch::IntegrationTest
     get admin_users_url
     assert_response :success
   end
+
+  test 'should not permit to get index' do
+    sign_in users(:user_one)
+    get admin_users_url
+    assert_redirected_to root_path
+  end
 end

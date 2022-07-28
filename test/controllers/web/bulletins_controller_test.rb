@@ -56,4 +56,18 @@ class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to profile_path
   end
+
+  test 'should archive bulletin' do
+    patch archive_bulletin_url(@bulletin)
+
+    assert_redirected_to profile_path
+    assert { Bulletin.find(@bulletin.id).archived? }
+  end
+
+  test 'should send bulletin to moderation' do
+    patch to_moderate_bulletin_url(@bulletin)
+
+    assert_redirected_to profile_path
+    assert { Bulletin.find(@bulletin.id).under_moderation? }
+  end
 end
