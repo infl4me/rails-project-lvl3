@@ -36,6 +36,8 @@ class ApplicationPolicy
     false
   end
 
+  private
+
   def user_exists?
     @user.present?
   end
