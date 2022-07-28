@@ -21,10 +21,14 @@ module AuthConcern
   def verify_admin
     return if signed_in? && current_user.admin
 
-    redirect_to root_path, alert: t('errors.access_denied')
+    handle_access_denied
+  end
+
+  def handle_access_denied
+    render 'web/errors/access_denied', status: :forbidden
   end
 
   def verify_profile
-    redirect_to root_path, alert: t('errors.access_denied') unless signed_in?
+    handle_access_denied unless signed_in?
   end
 end

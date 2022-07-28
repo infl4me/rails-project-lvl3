@@ -49,12 +49,28 @@ class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to bulletin_url(@bulletin)
   end
 
+  test 'not owner should not be able to update bulletin' do
+    sign_in users(:user_two)
+    patch bulletin_url(@bulletin), params: { bulletin: { category_id: @bulletin.category_id, description: @bulletin.description, title: @bulletin.title, user_id: @bulletin.user_id } }
+
+    assert_response :forbidden
+  end
+
   test 'should destroy bulletin' do
     assert_difference('Bulletin.count', -1) do
       delete bulletin_url(@bulletin)
     end
 
     assert_redirected_to profile_path
+  end
+
+  test 'not owner should not be able to destroy bulletin' do
+    sign_in users(:user_two)
+    assert_difference('Bulletin.count', 0) do
+      delete bulletin_url(@bulletin)
+    end
+
+    assert_response :forbidden
   end
 
   test 'should archive bulletin' do
@@ -64,10 +80,24 @@ class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
     assert { Bulletin.find(@bulletin.id).archived? }
   end
 
+  test 'not owner should not be able to archive bulletin' do
+    sign_in users(:user_two)
+    patch archive_bulletin_url(@bulletin)
+
+    assert_response :forbidden
+  end
+
   test 'should send bulletin to moderation' do
     patch to_moderate_bulletin_url(@bulletin)
 
     assert_redirected_to profile_path
     assert { Bulletin.find(@bulletin.id).under_moderation? }
+  end
+
+  test 'not owner should not be able to send bulletin to moderation' do
+    sign_in users(:user_two)
+    patch to_moderate_bulletin_url(@bulletin)
+
+    assert_response :forbidden
   end
 end

@@ -11,17 +11,17 @@ class Web::Admin::CategoriesAuthControllerTest < ActionDispatch::IntegrationTest
 
   test 'should not be permitted to get index' do
     get admin_categories_url
-    assert_redirected_to root_path
+    assert_response :forbidden
   end
 
   test 'should not be permitted to get new' do
     get new_admin_category_url
-    assert_redirected_to root_path
+    assert_response :forbidden
   end
 
   test 'should not be permitted to show bulletin' do
     get admin_category_url(@category)
-    assert_redirected_to root_path
+    assert_response :forbidden
   end
 
   test 'should not be permitted to create category' do
@@ -29,17 +29,17 @@ class Web::Admin::CategoriesAuthControllerTest < ActionDispatch::IntegrationTest
       post admin_categories_url, params: { category: { name: @category.name } }
     end
 
-    assert_redirected_to root_path
+    assert_response :forbidden
   end
 
   test 'should not be permitted to get edit' do
     get edit_admin_category_url(@category)
-    assert_redirected_to root_path
+    assert_response :forbidden
   end
 
   test 'should not be permitted to update category' do
     patch admin_category_url(@category), params: { category: { name: @category.name } }
-    assert_redirected_to root_path
+    assert_response :forbidden
   end
 
   test 'should not be permitted to destroy category' do
@@ -47,6 +47,6 @@ class Web::Admin::CategoriesAuthControllerTest < ActionDispatch::IntegrationTest
       delete admin_category_url(@category)
     end
 
-    assert_redirected_to root_path
+    assert_response :forbidden
   end
 end

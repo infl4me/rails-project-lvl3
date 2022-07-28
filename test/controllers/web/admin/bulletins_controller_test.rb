@@ -17,7 +17,7 @@ class Web::Admin::BulletinsControllerTest < ActionDispatch::IntegrationTest
   test 'should not be permitted to get index' do
     sign_in users(:user_one)
     get admin_root_path
-    assert_redirected_to root_path
+    assert_response :forbidden
   end
 
   test 'should publish bulletin' do
@@ -31,7 +31,7 @@ class Web::Admin::BulletinsControllerTest < ActionDispatch::IntegrationTest
     sign_in users(:user_one)
     patch publish_admin_bulletin_url(@bulletin_under_moderation)
 
-    assert_redirected_to root_path
+    assert_response :forbidden
   end
 
   test 'should reject bulletin' do
@@ -45,7 +45,7 @@ class Web::Admin::BulletinsControllerTest < ActionDispatch::IntegrationTest
     sign_in users(:user_one)
     patch reject_admin_bulletin_url(@bulletin_under_moderation)
 
-    assert_redirected_to root_path
+    assert_response :forbidden
   end
 
   test 'should archive bulletin' do
@@ -59,6 +59,6 @@ class Web::Admin::BulletinsControllerTest < ActionDispatch::IntegrationTest
     sign_in users(:user_one)
     patch archive_admin_bulletin_url(@bulletin_under_moderation)
 
-    assert_redirected_to root_path
+    assert_response :forbidden
   end
 end

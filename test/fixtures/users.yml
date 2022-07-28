@@ -1,8 +1,14 @@
 user_one:
   name: User one name
   email: asd@asd.com
+  admin: false
 
 user_admin:
   name: User admin
   email: user_admin@asd.com
   admin: true
+
+user_two:
+  name: User two name
+  email: user@two.com
+  admin: false
