@@ -25,10 +25,11 @@ class Web::Admin::CategoriesAuthControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should not be permitted to create category' do
-    assert_difference('Category.count', 0) do
-      post admin_categories_url, params: { category: { name: @category.name } }
-    end
+    name = Faker::Lorem.word
 
+    post admin_categories_url, params: { category: { name: name } }
+
+    assert { Category.find_by(name: name).nil? }
     assert_response :forbidden
   end
 
@@ -43,10 +44,9 @@ class Web::Admin::CategoriesAuthControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should not be permitted to destroy category' do
-    assert_difference('Category.count', 0) do
-      delete admin_category_url(@category)
-    end
+    delete admin_category_url(@category)
 
+    Category.find @category.id
     assert_response :forbidden
   end
 end

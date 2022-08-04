@@ -25,10 +25,11 @@ class Web::Admin::CategoriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should create category' do
-    assert_difference('Category.count') do
-      post admin_categories_url, params: { category: { name: @category.name } }
-    end
+    name = Faker::Lorem.word
 
+    post admin_categories_url, params: { category: { name: name } }
+
+    Category.find_by! name: name
     assert_redirected_to admin_categories_url
   end
 
@@ -43,10 +44,9 @@ class Web::Admin::CategoriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should destroy category' do
-    assert_difference('Category.count', -1) do
-      delete admin_category_url(@category)
-    end
+    delete admin_category_url(@category)
 
+    assert { Category.find_by(id: @category.id).nil? }
     assert_redirected_to admin_categories_url
   end
 end
