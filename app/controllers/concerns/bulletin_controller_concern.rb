@@ -9,13 +9,8 @@ module BulletinControllerConcern
 
   private
 
-  def set_bulletin_instance
-    @bulletin = Bulletin.find(params[:id])
-    authorize @bulletin
-  end
-
   def set_bulletin
-    authorize Bulletin
+    @bulletin = Bulletin.find(params[:id])
   end
 
   def bulletin_params

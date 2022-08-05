@@ -2,17 +2,20 @@
 
 class Web::Admin::BulletinsController < Web::Admin::ApplicationController
   include BulletinControllerConcern
-  before_action :set_bulletin_instance,
+  before_action :set_bulletin,
                 only: %i[publish reject archive]
-  before_action :set_bulletin, only: %i[index]
 
   def index
+    authorize Bulletin
+
     @q = Bulletin.ransack(params[:q])
     @bulletins = @q.result.where(state: :under_moderation).page(params[:page])
     @category_options = Category.all.pluck(:name, :id)
   end
 
   def publish
+    authorize @bulletin
+
     if @bulletin.may_publish?
       @bulletin.publish!
       redirect_to admin_root_path, notice: t('bulletins.notices.published')
@@ -22,6 +25,8 @@ class Web::Admin::BulletinsController < Web::Admin::ApplicationController
   end
 
   def reject
+    authorize @bulletin
+
     if @bulletin.may_reject?
       @bulletin.reject!
       redirect_to admin_root_path, notice: t('bulletins.notices.rejected')
@@ -31,6 +36,8 @@ class Web::Admin::BulletinsController < Web::Admin::ApplicationController
   end
 
   def archive
+    authorize @bulletin
+
     if @bulletin.may_archive?
       @bulletin.archive!
       redirect_to admin_root_path, notice: t('bulletins.notices.archived')
