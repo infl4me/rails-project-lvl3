@@ -2,11 +2,7 @@
 
 class Web::AuthController < Web::ApplicationController
   def callback
-    info = request.env['omniauth.auth'][:info]
-    email = info[:email].downcase
-    name = info[:name]
-
-    user = User.find_by(email: email) || User.create(email: email, name: name)
+    user = AuthenticateUserService.new.call(request.env['omniauth.auth'][:info])
     sign_in user
 
     redirect_to root_path
