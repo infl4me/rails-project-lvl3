@@ -1,5 +1,4 @@
 [![main](https://github.com/infl4me/rails-project-lvl3/actions/workflows/main.yml/badge.svg)](https://github.com/infl4me/rails-project-lvl3/actions/workflows/main.yml)
-[![hexlet-check](https://github.com/infl4me/rails-project-lvl3/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/infl4me/rails-project-lvl3/actions/workflows/hexlet-check.yml)
 
 [demo](https://intense-ravine-05453.herokuapp.com/)
 
